@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mantenimiento departamentos{% endblock %}
+
+{% block body %}
+    {#    <h1>Departamentos index</h1>#}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <a href="{{ path('departamentos_new') }}">Nuevo departamento</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>CodDepartamento</th>
+                                <th>DescDepartamento</th>
+                                <th>VolumenNegocio</th>
+                                <th>FechaCreacion</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for departamento in departamentos %}
+                                <tr>
+                                    <td>{{ departamento.id }}</td>
+                                    <td>{{ departamento.codDepartamento }}</td>
+                                    <td>{{ departamento.descDepartamento }}</td>
+                                    <td>{{ departamento.volumenNegocio }}</td>
+                                    <td>{{ departamento.fechaCreacion ? departamento.fechaCreacion|date('Y-m-d H:i:s') : '' }}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-secondary" href="{{ path('departamentos_show', {'id': departamento.id}) }}">Ver</a>
+                                        <a class="btn btn-sm btn-secondary" href="{{ path('departamentos_edit', {'id': departamento.id}) }}">Editar</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td class="text-center" colspan="6">No hay registros</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -15,7 +15,6 @@ class DepartamentosType extends AbstractType
             ->add('codDepartamento')
             ->add('descDepartamento')
             ->add('volumenNegocio')
-            ->add('fechaCreacion')
         ;
     }
 

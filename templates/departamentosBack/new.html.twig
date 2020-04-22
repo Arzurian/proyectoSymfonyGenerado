@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nuevo departamento{% endblock %}
+
+{% block body %}
+    <h1>Crear departamento</h1>
+
+    {{ include('departamentos/_form.html.twig') }}
+
+    <a href="{{ path('departamentos_index') }}">back to list</a>
+{% endblock %}

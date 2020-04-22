@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DepartamentosRepository")
  */
-class Departamentos
-{
+class Departamentos {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -31,61 +31,48 @@ class Departamentos
      */
     private $volumenNegocio;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $fechaCreacion;
-
-    public function getId(): ?int
-    {
+    public function getId(): ?int {
         return $this->id;
     }
 
-    public function getCodDepartamento(): ?string
-    {
+    public function getCodDepartamento(): ?string {
         return $this->codDepartamento;
     }
 
-    public function setCodDepartamento(string $codDepartamento): self
-    {
-        $this->codDepartamento = $codDepartamento;
+    public function setCodDepartamento(string $codDepartamento): self {
+        $this->codDepartamento = strtoupper($codDepartamento);
 
         return $this;
     }
 
-    public function getDescDepartamento(): ?string
-    {
+    public function getDescDepartamento(): ?string {
         return $this->descDepartamento;
     }
 
-    public function setDescDepartamento(string $descDepartamento): self
-    {
+    public function setDescDepartamento(string $descDepartamento): self {
         $this->descDepartamento = $descDepartamento;
 
         return $this;
     }
 
-    public function getVolumenNegocio(): ?int
-    {
+    public function getVolumenNegocio(): ?int {
         return $this->volumenNegocio;
     }
 
-    public function setVolumenNegocio(int $volumenNegocio): self
-    {
+    public function setVolumenNegocio(int $volumenNegocio): self {
         $this->volumenNegocio = $volumenNegocio;
 
         return $this;
     }
 
-    public function getFechaCreacion(): ?\DateTimeInterface
-    {
+    public function getFechaCreacion(): ?\DateTimeInterface {
         return $this->fechaCreacion;
     }
 
-    public function setFechaCreacion(\DateTimeInterface $fechaCreacion): self
-    {
+    public function setFechaCreacion(\DateTimeInterface $fechaCreacion): self {
         $this->fechaCreacion = $fechaCreacion;
 
         return $this;
     }
+
 }

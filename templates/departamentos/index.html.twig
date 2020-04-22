@@ -12,7 +12,6 @@
                 <th>CodDepartamento</th>
                 <th>DescDepartamento</th>
                 <th>VolumenNegocio</th>
-                <th>FechaCreacion</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,7 +22,6 @@
                 <td>{{ departamento.codDepartamento }}</td>
                 <td>{{ departamento.descDepartamento }}</td>
                 <td>{{ departamento.volumenNegocio }}</td>
-                <td>{{ departamento.fechaCreacion ? departamento.fechaCreacion|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('departamentos_show', {'id': departamento.id}) }}">show</a>
                     <a href="{{ path('departamentos_edit', {'id': departamento.id}) }}">edit</a>
@@ -31,7 +29,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

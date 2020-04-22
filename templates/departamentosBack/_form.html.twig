@@ -1,0 +1,11 @@
+{#{% form_theme form 'foundation_5_layout.html.twig' %}#}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+<div class="row">
+    <div class="col-6">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary btn-sm">{{ button_label|default('Guardar') }}</button>
+        {{ form_end(form) }}
+        
+    </div>
+</div>

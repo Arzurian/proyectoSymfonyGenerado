@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Departamentos{% endblock %}
+
+{% block body %}
+
+    <h1>Departamentos</h1>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-10">
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ departamento.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>CodDepartamento</th>
+                            <td>{{ departamento.codDepartamento }}</td>
+                        </tr>
+                        <tr>
+                            <th>DescDepartamento</th>
+                            <td>{{ departamento.descDepartamento }}</td>
+                        </tr>
+                        <tr>
+                            <th>VolumenNegocio</th>
+                            <td>{{ departamento.volumenNegocio }}</td>
+                        </tr>
+                        <tr>
+                            <th>FechaCreacion</th>
+                            <td>{{ departamento.fechaCreacion ? departamento.fechaCreacion|date('Y-m-d H:i:s') : '' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a href="{{ path('departamentos_index') }}">back to list</a>
+
+                <a href="{{ path('departamentos_edit', {'id': departamento.id}) }}">edit</a>
+
+                {{ include('departamentos/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Departamentos;
-use App\Form\Departamentos1Type;
+use App\Form\DepartamentosType;
 use App\Repository\DepartamentosRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +31,7 @@ class DepartamentosController extends AbstractController
     public function new(Request $request): Response
     {
         $departamento = new Departamentos();
-        $form = $this->createForm(Departamentos1Type::class, $departamento);
+        $form = $this->createForm(DepartamentosType::class, $departamento);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -63,7 +63,7 @@ class DepartamentosController extends AbstractController
      */
     public function edit(Request $request, Departamentos $departamento): Response
     {
-        $form = $this->createForm(Departamentos1Type::class, $departamento);
+        $form = $this->createForm(DepartamentosType::class, $departamento);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
